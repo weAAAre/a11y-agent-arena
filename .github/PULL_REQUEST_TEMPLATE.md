@@ -1,4 +1,4 @@
-## Equipo
+## Participante
 
 
 ## Estrategia del agente
@@ -10,5 +10,5 @@
 ## Principal limitación
 
 
-- [ ] Solo hemos modificado nuestra carpeta de `submissions/`.
-- [ ] No incluimos informes, scripts, secretos ni configuración MCP.
+- [ ] Solo he modificado mi carpeta de `submissions/`.
+- [ ] No incluyo informes, scripts, secretos ni configuración MCP.
