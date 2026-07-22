@@ -257,6 +257,144 @@ compara ambas ejecuciones:
 Si no encuentras una diferencia observable, todavía no has terminado de
 iterar. Vuelve a revisar el prompt o la modificación de la skill.
 
+## ⚠️ Alerta avanzada · Una skill también puede aprender mal
+
+> [!WARNING]
+> Conseguir un resultado mejor en las webs que ya conoces **no demuestra** que
+> la skill sea mejor. Puede haberse especializado en repetir esas respuestas.
+
+Una skill no aprende como si estuviéramos reentrenando un modelo. Sus
+instrucciones y referencias se añaden al contexto del agente cada vez que se
+utiliza. Por eso, una observación escrita como si fuera una regla puede
+condicionar todas las auditorías posteriores.
+
+Imagina que, después de una práctica, la skill guarda las URLs, los selectores
+o los problemas que encontró. En la siguiente ejecución quizá parezca más
+rápida y precisa, pero ya conoce parte del examen. También puede empezar a:
+
+- buscar únicamente los tipos de barrera que encontró antes;
+- tratar el resultado de una herramienta como una verdad universal;
+- convertir una hipótesis de una sola web en una regla general;
+- premiarse por encontrar muchos problemas, aunque aumenten los falsos
+  positivos;
+- ignorar resultados correctos, casos no aplicables o situaciones en las que
+  debería responder «no puedo determinarlo».
+
+Esto se parece al **sobreajuste**: optimizamos el agente para los ejemplos que
+ya hemos visto en lugar de mejorar su capacidad para auditar webs nuevas.
+Si además utilizamos los resultados del reto para redactar la skill y luego la
+evaluamos con esos mismos resultados, existe **contaminación de la
+evaluación**: las respuestas del examen han terminado dentro del método.
+
+### Qué debe aprender y qué no
+
+| Sí debe permanecer en la skill | Debe quedarse fuera de la skill |
+| --- | --- |
+| Un procedimiento reutilizable | La lista de fallos de una web concreta |
+| Fuentes normativas y su versión | URLs, selectores o respuestas del reto |
+| Cuándo utilizar cada herramienta | El resultado bruto de una ejecución |
+| Cómo obtener y citar evidencia | Conclusiones basadas en un único ejemplo |
+| Cómo tratar incertidumbre y límites | Frases escritas solo para ganar al juez |
+| Criterios de parada y revisión humana | Informes, trazas y archivos temporales |
+
+Las referencias tampoco son un cajón donde guardar todo. Añade una referencia
+solo si contiene conocimiento estable que futuras auditorías necesitarán. Una
+buena referencia explica, por ejemplo, la aplicabilidad de una comprobación o
+las limitaciones de una herramienta; no revela lo que había que descubrir en
+las webs de entrenamiento.
+
+### Cómo comprobar que la mejora es real
+
+Una skill seria se construye con un pequeño sistema de evaluación, no solo
+leyendo una respuesta que «suena mejor»:
+
+1. **Define el éxito antes de ejecutar.** Escribe qué comportamiento quieres
+   mejorar y qué evidencia demostraría que lo has conseguido.
+2. **Separa los casos.** Utiliza unos casos para desarrollar la skill, conserva
+   los errores ya confirmados como pruebas de regresión y reserva otros casos
+   para comprobar la versión final sin haberla ajustado contra ellos.
+3. **Incluye controles negativos.** Debe haber ejemplos que pasan, fallan, no
+   aplican y requieren revisión humana. Si todos contienen fallos, enseñas al
+   agente a acusar siempre.
+4. **Cambia una cosa cada vez.** Compara ambas versiones con las mismas
+   condiciones, herramientas y alcance. Si también cambias la web, el modelo y
+   la rúbrica, no sabrás qué provocó la diferencia.
+5. **Haz una comparación ciega.** Guarda la versión anterior y la nueva como A
+   y B. Pide a una persona o a otro agente que compare los resultados sin saber
+   cuál es la nueva.
+6. **Repite los casos importantes.** Los agentes no siempre recorren el mismo
+   camino. Una única ejecución especialmente buena o mala puede engañarte.
+7. **Revisa el juez.** Un evaluador de IA también puede equivocarse o favorecer
+   cierto estilo. Contrasta una muestra con evidencia y criterio humano.
+
+No reduzcas toda la evaluación a una puntuación. Compara al menos:
+
+- **cobertura:** qué vistas, estados, procesos e interacciones exploró;
+- **precisión:** cuántos hallazgos resisten una comprobación humana;
+- **evidencia:** si otra persona puede reproducir cada resultado;
+- **calibración:** si diferencia hecho, hipótesis y «no puedo determinarlo»;
+- **regresiones:** qué hacía bien la versión anterior y ahora ha dejado de
+  hacer;
+- **coste:** tiempo, pasos y herramientas necesarios para obtener el resultado.
+
+### Experimento opcional · Evalúa tu evaluador
+
+Puedes pedir al agente que prepare microcasos temporales de prueba sin
+añadirlos a la entrega. Deben incluir resultados esperados diferentes: pasar,
+fallar, no aplicar y necesitar juicio humano. Reserva algunos sin mostrárselos
+a la versión mientras la estás modificando.
+
+Después utiliza este prompt:
+
+```text
+Quiero comprobar si mi última modificación de $audit-a11y mejora de verdad o
+solo se ha adaptado a los ejemplos que ya conoce.
+
+Conserva una copia de la versión anterior como A y la actual como B. Antes de
+ejecutarlas, propón una rúbrica breve que mida cobertura, falsos positivos,
+calidad de la evidencia, calibración y regresiones. Separa casos de desarrollo,
+regresión y casos reservados.
+
+Ejecuta A y B bajo las mismas condiciones. No reveles a las versiones las
+respuestas esperadas de los casos reservados. Compara sus resultados de forma
+ciega, repite los casos importantes y señala cualquier empeoramiento aunque la
+puntuación total suba.
+
+No incorpores a SKILL.md ni a references/ URLs, selectores, respuestas o
+hallazgos específicos de las pruebas. Propón únicamente cambios metodológicos
+que puedan generalizarse a una web nueva. Conserva la decisión final para mi
+revisión.
+```
+
+Al terminar, elimina los casos, informes y trazas temporales. La entrega sigue
+siendo únicamente la skill.
+
+### Para profundizar
+
+Estas fuentes explican por qué una evaluación sólida necesita muestras
+representativas, resultados esperados, casos reservados y revisión humana:
+
+- [WCAG-EM 2.0](https://www.w3.org/TR/wcag-em-2/): combina muestras
+  estructuradas y aleatorias, evalúa procesos completos y documenta el alcance.
+- [Accessibility Conformance Testing (ACT)](https://www.w3.org/WAI/standards-guidelines/act/):
+  formaliza aplicabilidad, expectativas, supuestos y pruebas automatizadas,
+  semiautomatizadas y manuales.
+- [Consistencia de implementaciones ACT](https://www.w3.org/WAI/standards-guidelines/act/implementations/):
+  compara los resultados con ejemplos que deben pasar, fallar o no aplicar y
+  contempla el resultado «cannot tell».
+- [OpenAI · Model guidance](https://developers.openai.com/api/docs/guides/latest-model):
+  recomienda probar tareas representativas, simplificar una parte cada vez y
+  volver a ejecutar las mismas evaluaciones.
+- [Anthropic · Skill Creator](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md):
+  propone casos de prueba, evaluación cuantitativa, revisión humana y
+  comparaciones A/B ciegas entre versiones de una skill.
+
+Como conversación de comunidad —útil para descubrir problemas reales, pero no
+como norma— puedes revisar el debate sobre
+[evaluación y rúbricas en skills de producción](https://github.com/anthropics/skills/discussions/435)
+y este hilo sobre
+[conservar un conjunto de pruebas congelado al optimizar prompts](https://www.reddit.com/r/PromptEngineering/comments/1uqcg6r/do_you_keep_a_frozen_test_set_for_prompt/).
+
 ### Posible resultado final
 
 No se espera una aplicación nueva ni un informe enorme. El resultado será una
