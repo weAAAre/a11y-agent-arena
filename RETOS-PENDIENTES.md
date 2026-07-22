@@ -16,17 +16,26 @@ Calcula aproximadamente 30 minutos para cada reto. Hazlos en orden.
 
 Abre este repositorio completo en el agente que quieras utilizar.
 
+Inicia una conversación nueva después de abrir o actualizar el repositorio. La
+skill debe aparecer como `$audit-a11y`. Si no aparece, pide al agente que vuelva
+a cargar las skills del proyecto o reinicia la herramienta.
+
 Elige un identificador personal corto, preferiblemente tu usuario de GitHub y
-sin espacios. Por ejemplo: `ana-garcia`.
+sin espacios. Por ejemplo: `ana-garcia`. El identificador se utilizará después
+para la rama y la pull request; la skill siempre vive en la misma ruta.
 
 Empieza la conversación con algo parecido a esto:
 
 ```text
 Mi identificador para A11y Agent Arena es <participante>.
 
-Trabaja solamente en submissions/<participante>/audit-a11y/. Si todavía no
-existe, créalo a partir del starter. No modifiques el starter ni las entregas
-de otras personas.
+Trabaja solamente en .agents/skills/audit-a11y/. Esta es la skill que debes
+invocar, probar e iterar.
+
+Si encuentras mi trabajo anterior en
+submissions/<participante>/audit-a11y/, compáralo con la skill activa y migra
+primero mis archivos Markdown a .agents/skills/audit-a11y/. No pierdas lo que
+hice en clase y no modifiques la skill submit-a11y-agent.
 
 Antes de cambiar nada, revisa mi skill actual y explícame brevemente qué sabe
 hacer y qué le falta.
@@ -254,10 +263,10 @@ No se espera una aplicación nueva ni un informe enorme. El resultado será una
 carpeta pequeña parecida a esta:
 
 ```text
-submissions/<participante>/audit-a11y/
+.agents/skills/audit-a11y/
 ├── SKILL.md
 └── references/
-    └── notas-metodologicas.md   (opcional)
+    └── notas-metodologicas.md
 ```
 
 La skill final debería ser capaz de:

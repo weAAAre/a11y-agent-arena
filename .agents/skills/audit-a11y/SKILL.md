@@ -7,4 +7,4 @@ description: Audita la accesibilidad de una web indicada por el usuario y devuel
 
 Revisar la URL indicada y devolver una lista de problemas de accesibilidad.
 
-<!-- Este agente todavía no tiene método, herramientas ni límites. Construidlos. -->
+<!-- Este agente todavía no tiene método, herramientas ni límites. Constrúyelos mediante los retos. -->

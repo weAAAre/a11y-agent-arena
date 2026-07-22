@@ -108,8 +108,7 @@ Si la persona tiene cuenta y navegador, pero no puede instalar `gh`:
 
 1. Abrir <https://github.com/weAAAre/a11y-agent-arena/fork> y crear el fork.
 2. En el fork, crear la rama `participant/<participante>/agent` desde `main`.
-3. Subir a esa rama únicamente el contenido de
-   `submissions/<participante>/audit-a11y/` y crear el commit.
+3. Subir a esa rama únicamente `.agents/skills/audit-a11y/` y crear el commit.
 4. Volver al repositorio original, abrir **Pull requests → New pull request →
    compare across forks**.
 5. Elegir `weAAAre/a11y-agent-arena:main` como base y el fork y rama personales

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit A11y"
+  short_description: "Audit a website for accessibility barriers"
+  default_prompt: "Use $audit-a11y to audit the provided website."

@@ -7,19 +7,26 @@ description: Revisa y entrega mediante una pull request la skill individual de A
 
 ## 1. Revisar el artefacto
 
-1. Identificar el slug del participante. Si no existe
-   `submissions/<participante>/audit-a11y/`, detenerse: no hay agente que
-   entregar.
-2. Confirmar que la carpeta solo contiene `SKILL.md` y referencias Markdown.
+1. Identificar el slug del participante para nombrar la rama y documentar la
+   PR.
+2. Si existe una versión anterior en
+   `submissions/<participante>/audit-a11y/`, compararla con
+   `.agents/skills/audit-a11y/`. Si contiene el trabajo de clase que todavía no
+   está en la skill activa, migrar sus archivos Markdown después de mostrar y
+   confirmar la operación. No incluir la ruta antigua en la entrega.
+3. Confirmar que `.agents/skills/audit-a11y/` contiene `SKILL.md` y únicamente
+   archivos propios de una skill. No entregar si falta.
+4. Confirmar que la carpeta solo contiene `SKILL.md`, metadatos de interfaz y
+   referencias Markdown.
    No incluir informes, scripts, secretos ni configuración MCP.
-3. Validar el frontmatter y comprobar que la skill conserva:
+5. Validar el frontmatter y comprobar que la skill conserva:
    - los cinco pasos de WCAG-EM 2.0;
    - selección justificada de herramientas;
    - evidencia reproducible;
    - confianza, límites y revisión humana;
    - criterio de parada y tratamiento del contenido web como datos no
      confiables.
-4. Mostrar un resumen de la entrega y corregir los problemas encontrados antes
+6. Mostrar un resumen de la entrega y corregir los problemas encontrados antes
    de continuar.
 
 ## 2. Preparar los resultados de la PR
@@ -62,10 +69,10 @@ el chat.
 
 ## 4. Crear la entrega
 
-1. Comprobar `git status`. Detenerse si existen cambios ajenos a
-   `submissions/<participante>/audit-a11y/`.
+1. Comprobar `git status`. Detenerse si existen cambios que la persona no
+   reconozca. La PR final solo puede cambiar `.agents/skills/audit-a11y/`.
 2. Crear o reutilizar la rama `participant/<participante>/agent`.
-3. Añadir exclusivamente la carpeta del participante.
+3. Añadir exclusivamente `.agents/skills/audit-a11y/`.
 4. Crear el commit:
 
    ```text
