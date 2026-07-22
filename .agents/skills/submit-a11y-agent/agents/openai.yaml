@@ -1,0 +1,4 @@
+interface:
+  display_name: "Submit A11y Agent"
+  short_description: "Submit the team agent through a pull request"
+  default_prompt: "Use $submit-a11y-agent to submit our team agent."
