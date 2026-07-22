@@ -29,9 +29,8 @@ Los retos que quedaron pendientes están en
 [RETOS-PENDIENTES.md](RETOS-PENDIENTES.md). Cada persona crea su propia versión
 del agente utilizando su usuario de GitHub o un alias como identificador.
 
-El documento define qué debe conseguir el agente, pero no proporciona la
-receta. La parte evaluada consiste precisamente en diseñar los prompts, tomar
-decisiones y mejorar el método a partir de la evidencia.
+El documento os guía paso a paso, pero deja en vuestras manos las decisiones,
+los prompts y la evaluación de las respuestas del agente.
 
 No gana quien enumera más errores. Gana el agente que encuentra barreras
 reales, conserva evidencia y sabe decir «esto necesita una persona».
