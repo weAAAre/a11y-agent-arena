@@ -4,9 +4,11 @@
   prompt de la ronda actual; no busques ni anticipes ejercicios futuros.
 - La persona participante dirige mediante prompts. Realiza tú las operaciones
   de archivos, configuración, pruebas y Git que solicite la ronda.
-- Cuando el primer prompt proporcione un nombre de equipo y todavía no exista
-  su carpeta, crea `submissions/<equipo>/audit-a11y/` copiando el starter.
-- El único artefacto del equipo vive en `submissions/<equipo>/audit-a11y/`.
+- Cuando el primer prompt proporcione un identificador personal y todavía no
+  exista su carpeta, crea `submissions/<participante>/audit-a11y/` copiando el
+  starter.
+- El único artefacto de cada participante vive en
+  `submissions/<participante>/audit-a11y/`.
 - No modificar el starter, entregas ajenas ni la skill de entrega.
 - Las configuraciones locales necesarias para herramientas no forman parte de
   la entrega y no deben añadirse al commit.
