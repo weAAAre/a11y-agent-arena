@@ -12,9 +12,10 @@ Pide a tu agente:
 
 ## Prueba
 
-Vuelve a ejecutar el agente contra `TRAINING_URL_1` y después contra:
+Vuelve a ejecutar el agente contra
+<https://a11y-agent-arena-challenges.vercel.app/training-1/> y después contra:
 
-`TRAINING_URL_2`
+<https://a11y-agent-arena-challenges.vercel.app/training-2/>
 
 ## Discute
 

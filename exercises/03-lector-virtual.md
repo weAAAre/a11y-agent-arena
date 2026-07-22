@@ -6,7 +6,9 @@
 
 ## Predice
 
-Antes de instalar nada, elegid un componente de `TRAINING_URL_2` y escribid qué creéis que anunciará y en qué orden.
+Antes de instalar nada, elegid un componente de
+<https://a11y-agent-arena-challenges.vercel.app/training-2/> y escribid qué
+creéis que anunciará y en qué orden.
 
 ## Construye
 
@@ -16,7 +18,8 @@ Pide a tu agente:
 
 ## Prueba
 
-Ejecuta de nuevo la skill contra `TRAINING_URL_2`.
+Ejecuta de nuevo la skill contra
+<https://a11y-agent-arena-challenges.vercel.app/training-2/>.
 
 ## Discute
 

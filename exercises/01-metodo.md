@@ -14,7 +14,7 @@ Pide a tu agente:
 
 Ejecuta la skill contra:
 
-`TRAINING_URL_1`
+<https://a11y-agent-arena-challenges.vercel.app/training-1/>
 
 ## Discute
 
