@@ -23,11 +23,20 @@ No tenéis que copiar carpetas, editar archivos ni escribir código manualmente:
 el agente debe hacerlo. Vuestro trabajo es dirigirlo, cuestionar sus decisiones
 y mejorar el método con cada prueba.
 
+El agente que vais a construir ya está instalado como skill del proyecto:
+
+```text
+.agents/skills/audit-a11y/
+```
+
+La identidad del participante se utiliza en la rama y en la pull request, no en
+la ruta de la skill. Cada persona trabaja sobre su propia copia o fork del repo.
+
 ## Continuación individual
 
 Los retos que quedaron pendientes están en
 [RETOS-PENDIENTES.md](RETOS-PENDIENTES.md). Cada persona crea su propia versión
-del agente utilizando su usuario de GitHub o un alias como identificador.
+de `$audit-a11y` utilizando su usuario de GitHub o un alias como identificador.
 
 El documento os guía paso a paso, pero deja en vuestras manos las decisiones,
 los prompts y la evaluación de las respuestas del agente.

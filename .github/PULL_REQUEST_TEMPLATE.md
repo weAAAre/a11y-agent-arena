@@ -29,7 +29,7 @@ skill?
 
 ## Comprobaciones de entrega
 
-- [ ] Solo he modificado mi carpeta de `submissions/`.
+- [ ] Solo he modificado `.agents/skills/audit-a11y/`.
 - [ ] La PR contiene la skill y referencias Markdown, no el informe completo.
 - [ ] No incluyo scripts, secretos ni configuración MCP.
 - [ ] He indicado incertidumbres y comprobaciones humanas pendientes.
