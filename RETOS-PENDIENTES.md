@@ -1,93 +1,211 @@
-# Continuación individual · A11y Agent Arena
+# Retos 2 y 3 · Guía para continuar en casa
 
-Estos retos no tienen un prompt oficial. El objetivo es aprender a dirigir un
-agente: decidir qué pedirle, cuestionar sus decisiones y transformar lo
-aprendido en un método reutilizable.
+En clase empezaste a construir una skill de auditoría de accesibilidad. Ahora
+vas a mejorarla dos veces:
 
-Utiliza tu usuario de GitHub o un alias como identificador. Tu único artefacto
-de entrega debe quedar en:
+1. En el **Reto 2**, conseguirás que el agente pueda utilizar un navegador.
+2. En el **Reto 3**, comprobarás la interfaz con un lector virtual.
+
+No necesitas saber programar ni conocer de memoria cómo se instala un MCP. Tu
+trabajo consiste en pedírselo al agente, comprobar que lo ha hecho de verdad y
+decidir qué debe aprender la skill.
+
+Calcula aproximadamente 30 minutos para cada reto. Hazlos en orden.
+
+## 1. Prepara tu copia
+
+Abre este repositorio completo en el agente que quieras utilizar.
+
+Elige un identificador personal corto, preferiblemente tu usuario de GitHub y
+sin espacios. Por ejemplo: `ana-garcia`.
+
+Empieza la conversación con algo parecido a esto:
 
 ```text
-submissions/<participante>/audit-a11y/
+Mi identificador para A11y Agent Arena es <participante>.
+
+Trabaja solamente en submissions/<participante>/audit-a11y/. Si todavía no
+existe, créalo a partir del starter. No modifiques el starter ni las entregas
+de otras personas.
+
+Antes de cambiar nada, revisa mi skill actual y explícame brevemente qué sabe
+hacer y qué le falta.
 ```
 
-Trabaja mediante prompts. No edites la skill ni ejecutes comandos manualmente.
-No guardes los informes de entrenamiento: conserva únicamente el método.
+No tienes que copiar carpetas, editar archivos ni ejecutar comandos: debe
+hacerlo el agente.
+
+## Cómo trabajar con el agente
+
+No intentes resolver cada reto con un único prompt enorme. Utiliza una
+conversación corta:
+
+1. **Pregunta:** pídele que explique qué propone hacer.
+2. **Decide:** acepta el plan o pídele que cambie lo que no entiendas.
+3. **Comprueba:** no aceptes «ya está instalado»; pide una demostración real.
+4. **Compara:** pregunta qué ha podido descubrir ahora que antes no podía.
+5. **Conserva:** pídele que guarde lo aprendido en la skill, no en un informe.
+
+Si utiliza una palabra o herramienta que no conoces, pregúntale qué significa
+antes de continuar.
+
+---
 
 ## Reto 2 · Dale un navegador
 
-### Misión
+### Qué tienes que conseguir
 
-Consigue que tu agente pueda utilizar el MCP oficial de Playwright y convierta
-esa capacidad en una mejora real de su método de auditoría.
+Tu agente debe ser capaz de utilizar el **MCP oficial de Playwright** para abrir
+una web e interactuar con ella. Después debe incorporar esa capacidad a su
+método de auditoría.
 
-Una configuración escrita no demuestra que la integración funcione. Decide
-qué prueba observable vas a exigirle.
+No basta con que el agente escriba un archivo de configuración o diga que la
+instalación ha terminado. Tiene que demostrar que puede controlar realmente el
+navegador.
 
-### Campo de pruebas
+### Paso 1 · Entender la limitación actual
+
+Pide al agente que revise su skill y te responda:
+
+> ¿Qué partes de una auditoría no puedes comprobar todavía sin controlar un
+> navegador real?
+
+No busques una respuesta perfecta. El objetivo es tener algo con lo que
+comparar al terminar el reto.
+
+### Paso 2 · Conseguir la nueva capacidad
+
+Pide al agente que investigue cómo integrar el MCP oficial de Playwright en la
+herramienta que estés utilizando y que realice la integración.
+
+No le des tú los comandos. Debe averiguar el procedimiento adecuado para su
+propio entorno. Si necesita que reinicies la aplicación, hazlo, vuelve a abrir
+el repositorio y continúa la conversación.
+
+### Paso 3 · Demostrar que funciona
+
+Utiliza esta web como primer campo de pruebas:
+
+<https://a11y-agent-arena-challenges.vercel.app/training-1/>
+
+Pide una prueba sencilla pero observable: que abra la web con el MCP y realice
+alguna navegación o interacción real. Tú decides qué demostración aceptar.
+
+Si solo te enseña configuración, código o una explicación, todavía no has
+superado este paso.
+
+### Paso 4 · Poner a prueba el agente
+
+Cuando el navegador funcione, pide al agente que ejecute su skill de auditoría
+sobre estas dos webs:
 
 - <https://a11y-agent-arena-challenges.vercel.app/training-1/>
 - <https://a11y-agent-arena-challenges.vercel.app/training-2/>
 
-### Condiciones de éxito
+No le digas qué errores debe buscar. Observa qué decide explorar, qué acciones
+realiza y qué evidencia aporta.
 
-- Existe una ejecución real del navegador, no solo una instalación declarada.
-- El agente deja de tratar la web como una única captura estática.
-- La skill aprende cuándo necesita explorar navegación, estados o procesos.
-- Los resultados importantes pueden reproducirse a partir de evidencia.
-- El agente distingue lo observado de lo que todavía debe comprobarse.
+### Paso 5 · Mejorar la skill
 
-### Antes de continuar
+Pregunta al agente:
 
-Responde para ti:
+> ¿Qué has podido comprobar con el navegador que antes no podías demostrar?
 
-1. ¿Qué podía afirmar tu agente antes de tener navegador?
-2. ¿Qué puede demostrar ahora que antes solo suponía?
-3. ¿Qué sigue sin demostrar una captura del árbol de accesibilidad?
+Después, pídele que actualice tu `SKILL.md` con lo aprendido. Debe mejorar el
+método de futuras auditorías, no guardar las respuestas de estas dos webs.
 
-Actualiza la skill a partir de esas respuestas. No conserves el informe.
+### Has terminado el Reto 2 si…
 
-## Reto 3 · Otra forma de leer
+- Has visto una ejecución real del MCP de Playwright.
+- El agente ha navegado o interactuado, no solo leído una página.
+- Puedes explicar una diferencia entre la auditoría anterior y la nueva.
+- La skill ha mejorado y no contiene el informe de entrenamiento.
 
-### Misión
+---
 
-Añade al agente una segunda perspectiva sobre cómo se expone e interpreta una
-interfaz. Antes de integrar nada, elige una interacción dinámica de Cita Clara
-y escribe tu predicción: qué información aparecerá y en qué orden.
+## Reto 3 · Comprueba otra forma de leer la web
 
-El sensor que debes investigar está publicado como:
+### Qué tienes que conseguir
+
+Ahora añadirás un lector virtual al agente. Este lector permite observar cómo
+un simulador interpreta el contenido y las interacciones de una página.
+
+Utilizarás este paquete:
 
 ```text
 @weaaare/mcp-virtual-screen-reader-auditor
 ```
 
-### Campo de pruebas
+Importante: es un **simulador**. No sustituye a NVDA, JAWS, VoiceOver ni a una
+prueba con una persona usuaria.
 
-- <https://a11y-agent-arena-challenges.vercel.app/training-2/>
+### Paso 1 · Haz una predicción
 
-### Condiciones de éxito
+Vuelve a Cita Clara:
 
-- El agente demuestra una sesión e interacción reales con el sensor.
-- Obtiene un registro observable y lo compara con tu predicción previa.
-- La skill decide cuándo esta perspectiva aporta evidencia relevante.
-- El agente contrasta señales cuando distintas herramientas no cuentan la
-  misma historia.
-- Sus conclusiones expresan con precisión qué representa el simulador y qué no.
+<https://a11y-agent-arena-challenges.vercel.app/training-2/>
 
-### Antes de entregar
+Elige cualquier interacción que cambie algo en la página. Antes de utilizar el
+lector virtual, escribe qué crees que se escuchará y en qué orden.
 
-Responde para ti:
+No importa si te equivocas. Necesitamos la predicción para poder comparar.
 
-1. ¿Qué parte de tu predicción era una suposición?
-2. ¿Qué evidencia nueva cambió el método del agente?
-3. ¿Qué conclusión seguiría necesitando tecnología asistiva real o una persona?
+### Paso 2 · Integra el lector virtual
 
-Actualiza la skill a partir de esas respuestas. No conserves el informe.
+Pide al agente que investigue cómo integrar el paquete en tu herramienta y que
+lo deje preparado para usarlo.
 
-## Entrega
+De nuevo, no aceptes únicamente una instalación declarada. Pide al agente que
+inicie una sesión real del lector virtual sobre Cita Clara.
 
-Cuando consideres que el agente está preparado, esta parte sí puede delegarse
-de forma explícita:
+### Paso 3 · Repite la interacción
+
+Pide al agente que reproduzca con el lector virtual la misma interacción sobre
+la que hiciste la predicción.
+
+Debe mostrarte el registro de lo que el simulador ha interpretado. Si devuelve
+una explicación sin utilizar la herramienta, pídele la evidencia de la sesión.
+
+### Paso 4 · Compara
+
+Compara tu predicción con el registro obtenido:
+
+- ¿Qué coincidió?
+- ¿Qué no apareció?
+- ¿Qué ocurrió en un orden diferente?
+- ¿Qué conclusión no podrías generalizar a todos los lectores de pantalla?
+
+### Paso 5 · Mejora de nuevo la skill
+
+Pide al agente que actualice `SKILL.md` para utilizar el lector virtual cuando
+aporte información útil y para explicar correctamente sus límites.
+
+La skill debe conservar el método aprendido, no el resultado concreto de Cita
+Clara.
+
+### Has terminado el Reto 3 si…
+
+- Has visto una sesión real del lector virtual.
+- Has comparado un registro con una predicción escrita antes de la prueba.
+- El agente diferencia simulación, lector real y validación humana.
+- La skill ha mejorado sin guardar el informe de entrenamiento.
+
+---
+
+## Si te bloqueas
+
+- Si el agente dice que ha instalado algo, pero no lo utiliza, pídele:
+  «demuéstramelo ejecutando una prueba real y enséñame el resultado».
+- Si necesita reiniciarse para detectar un MCP, reinicia la aplicación, vuelve
+  a abrir el repositorio y recuérdale en qué paso estabais.
+- Si aparecen muchos errores técnicos, pide que investigue primero uno solo y
+  que te explique la causa con palabras sencillas.
+- Puedes pedir ayuda en Discord compartiendo el mensaje de error, pero no
+  compartas claves, tokens ni otros secretos.
+
+## Entrega tu agente
+
+Cuando hayas terminado ambos retos, pega este prompt:
 
 ```text
 Usa $submit-a11y-agent para revisar y entregar mi agente auditor individual.
@@ -95,17 +213,24 @@ Mi identificador es <participante>. Devuélveme la URL de la pull request y no
 la fusiones.
 ```
 
-`main` está protegida. La pull request quedará abierta hasta su revisión.
+El agente revisará tu carpeta y abrirá una pull request. `main` está protegida,
+por lo que la PR quedará esperando revisión.
 
-## Qué compartir en Discord
+## Comparte el resultado en Discord
 
-No publiques una lista completa. Comparte el hallazgo que mejor demuestre el
-comportamiento de tu agente y explica brevemente:
+Publica solamente:
 
-- qué barrera cree haber encontrado;
-- qué evidencia la sostiene;
-- qué cambió en el agente después de los dos retos;
-- qué limitación importante conserva.
+```text
+Participante:
+Pull request:
+Hallazgo más sólido:
+Evidencia que aporta el agente:
+Mayor mejora de mi agente:
+Principal limitación que conserva:
+```
 
-La próxima clase contrastaremos las respuestas, descubriremos los falsos
-positivos y elegiremos el agente auditor individual más sólido.
+La próxima clase revelaremos las barreras que estaban preparadas, revisaremos
+los falsos positivos y elegiremos el agente auditor individual más sólido.
+
+No gana quien escriba la lista más larga. Gana quien pueda demostrar mejor lo
+que afirma.
