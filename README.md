@@ -11,17 +11,18 @@ Copia y pega este [prompt de preparación](https://gist.github.com/cgm164/bde65b
 
 ## La misión
 
-1. Formad un equipo y elegid un slug.
-2. Pedid a vuestro agente que copie `starter/audit-a11y/` en `submissions/<equipo>/audit-a11y/`.
-3. Completad las cuatro rondas en orden.
-4. Después de cada ronda, probad vuestro agente y modificad la skill según la evidencia.
-5. Entregad la skill por pull request.
+1. Formad un equipo y elegid un nombre corto.
+2. Abrid este repositorio completo en el agente que hayáis elegido.
+3. Esperad al enunciado del instructor.
+4. Pegad únicamente el prompt de la ronda actual y tomad las decisiones que el
+   agente os vaya planteando.
+5. Al terminar, pegad el prompt de entrega del instructor.
 
-## Rondas
+No tenéis que copiar carpetas, editar archivos ni escribir código manualmente:
+el agente debe hacerlo. Vuestro trabajo es dirigirlo, cuestionar sus decisiones
+y mejorar el método con cada prueba.
 
-- [01 · Método](exercises/01-metodo.md)
-- [02 · Navegador](exercises/02-playwright.md)
-- [03 · Otra forma de leer](exercises/03-lector-virtual.md)
-- [04 · Entrega](exercises/04-entrega.md)
+Los ejercicios se revelan en directo. No pidáis al agente que busque rondas
+futuras: no están en este repositorio.
 
 No gana quien enumera más errores. Gana el agente que encuentra barreras reales, conserva evidencia y sabe decir «esto necesita una persona».

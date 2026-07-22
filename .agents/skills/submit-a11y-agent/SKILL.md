@@ -5,7 +5,8 @@ description: Revisa y entrega mediante una pull request la skill de un equipo de
 
 # Entregar el agente
 
-1. Identificar el slug del equipo.
+1. Identificar el slug del equipo. Si su carpeta todavía no existe, detenerse:
+   no hay un agente construido que entregar.
 2. Revisar que `submissions/<equipo>/audit-a11y/` solo contenga `SKILL.md` y referencias Markdown.
 3. Validar el frontmatter y comprobar que no contiene informes, scripts, configuración MCP ni secretos.
 4. Revisar que la skill haga visibles los cinco pasos de WCAG-EM 2.0, la evidencia, los límites y la revisión humana.
