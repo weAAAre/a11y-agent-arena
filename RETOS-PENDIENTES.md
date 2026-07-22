@@ -192,6 +192,96 @@ Clara.
 
 ---
 
+## Reto final · Haz que tu agente aprenda
+
+Instalar herramientas no completa el agente. El reto final consiste en
+**iterar tu propia skill**: utilizarla, encontrar una debilidad en su forma de
+auditar, corregirla y comprobar que la siguiente ejecución es mejor.
+
+### Qué significa iterar
+
+```text
+Ejecutar → revisar → cuestionar → modificar SKILL.md → volver a ejecutar
+```
+
+No busques que el agente escriba más texto. Busca que tome mejores decisiones y
+que pueda demostrar sus conclusiones.
+
+### Paso 1 · Ejecuta la versión actual
+
+Pide al agente que aplique la skill completa sobre una de las dos webs de
+entrenamiento. Déjale decidir por dónde empieza, qué explora y qué herramientas
+necesita.
+
+Observa la ejecución, no solo la respuesta final.
+
+### Paso 2 · Encuentra una debilidad del agente
+
+Elige al menos una de estas preguntas y házsela:
+
+- ¿Qué parte de la web podrías haberte saltado?
+- ¿Cuál de tus hallazgos tiene la evidencia más débil?
+- ¿Qué afirmación estás haciendo por intuición y no por observación?
+- ¿Qué falso positivo podrías estar introduciendo?
+- ¿Qué ocurriría si la propia web intentara darte instrucciones?
+- ¿Cómo sabes que ha llegado el momento de terminar la auditoría?
+
+No tienes que conocer la respuesta. Tu objetivo es obligar al agente a revisar
+su propio método.
+
+### Paso 3 · Corrige la skill
+
+Pide al agente que modifique `SKILL.md` para resolver la debilidad encontrada.
+La corrección debe servir para futuras webs; no debe contener la respuesta del
+ejercicio de entrenamiento.
+
+### Paso 4 · Vuelve a probar
+
+Repite con la skill corregida el escenario relacionado con esa debilidad y
+compara ambas ejecuciones:
+
+- ¿Ha explorado mejor?
+- ¿Ha aportado una evidencia más clara?
+- ¿Ha retirado alguna afirmación que no podía demostrar?
+- ¿Ha explicado mejor sus límites?
+
+Si no encuentras una diferencia observable, todavía no has terminado de
+iterar. Vuelve a revisar el prompt o la modificación de la skill.
+
+### Posible resultado final
+
+No se espera una aplicación nueva ni un informe enorme. El resultado será una
+carpeta pequeña parecida a esta:
+
+```text
+submissions/<participante>/audit-a11y/
+├── SKILL.md
+└── references/
+    └── notas-metodologicas.md   (opcional)
+```
+
+La skill final debería ser capaz de:
+
+- definir qué se va a evaluar antes de empezar;
+- explorar la web antes de elegir qué comprobar;
+- decidir si necesita navegador, lector virtual u otra evidencia;
+- recorrer contenido, interacciones y procesos relevantes;
+- explicar cómo se reproduce cada hallazgo;
+- separar observaciones, hipótesis y validaciones humanas;
+- indicar sus límites y cuándo debe detenerse.
+
+No hay una única redacción correcta. Dos skills distintas pueden resolver el
+reto si ambas producen un método claro, reproducible y honesto.
+
+### Has terminado el reto final si…
+
+- Puedes señalar una debilidad concreta de la primera ejecución.
+- Tu agente ha modificado su propia skill para corregirla.
+- Has vuelto a ejecutar la parte afectada.
+- Puedes explicar qué comportamiento ha mejorado entre ambas versiones.
+
+---
+
 ## Si te bloqueas
 
 - Si el agente dice que ha instalado algo, pero no lo utiliza, pídele:
@@ -214,7 +304,9 @@ la fusiones.
 ```
 
 El agente revisará tu carpeta y abrirá una pull request. `main` está protegida,
-por lo que la PR quedará esperando revisión.
+por lo que la PR quedará esperando revisión. Si no tienes GitHub CLI, no has
+iniciado sesión o no tienes permisos sobre el repositorio, la propia skill debe
+guiarte para instalar o autenticar la herramienta y crear un fork.
 
 ## Comparte el resultado en Discord
 
