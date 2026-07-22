@@ -14,7 +14,7 @@ creéis que anunciará y en qué orden.
 
 Pide a tu agente:
 
-> Instala desde npm e integra en Codex `@weaaare/mcp-virtual-screen-reader-auditor`. Comprueba realmente que puede iniciar una sesión, navegar y devolver el registro de frases. Después mejora nuestra skill: el lector virtual solo debe usarse sobre una muestra justificada, su estado debe reproducirse y sus resultados deben describirse como simulación, nunca como prueba con VoiceOver, NVDA o personas.
+> Instala desde npm e integra en el entorno del agente que hemos elegido `@weaaare/mcp-virtual-screen-reader-auditor`. Sigue la documentación de ese entorno para conectar un servidor MCP. Comprueba realmente que puede iniciar una sesión, navegar y devolver el registro de frases. Después mejora nuestra skill: el lector virtual solo debe usarse sobre una muestra justificada, su estado debe reproducirse y sus resultados deben describirse como simulación, nunca como prueba con VoiceOver, NVDA o personas.
 
 ## Prueba
 

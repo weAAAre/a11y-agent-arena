@@ -2,6 +2,9 @@
 
 En dos horas construiréis un agente de auditoría y lo enfrentaréis a una web secreta.
 
+Podéis usar el agente que queráis. La competición evalúa el método que
+construís, no la marca, la interfaz ni el modelo elegido.
+
 ## Antes de entrar
 
 Copia y pega este [prompt de preparación](https://gist.github.com/cgm164/bde65b38c0fc42af256619e89179a03d) en tu agente. No continúes hasta que todas las comprobaciones aparezcan como `LISTO`.

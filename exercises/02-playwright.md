@@ -8,7 +8,7 @@
 
 Pide a tu agente:
 
-> Instala y configura Playwright MCP oficial en este proyecto siguiendo su documentación actual. Después mejora nuestra skill para explorar rutas, completar procesos, probar teclado, observar el foco y conservar evidencia. Verifica que el MCP funciona antes de auditar.
+> Instala y configura Playwright MCP oficial en el entorno del agente que hemos elegido, siguiendo la documentación actual de ambos. Después mejora nuestra skill para explorar rutas, completar procesos, probar teclado, observar el foco y conservar evidencia. Verifica con una navegación real que la integración funciona antes de auditar.
 
 ## Prueba
 
